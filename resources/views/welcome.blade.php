@@ -17,8 +17,13 @@
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col items-center justify-center min-h-screen p-6">
 
     <!-- Lottie Animation -->
-    <div id="lottie-container" class="w-64 h-64 mx-auto mb-8"></div>
+     <div id="lottie-container" style="width: 300px; height: 300px;"></div>
+    <div class="text-center mb-10 mt-6">
+        <h1 class="text-4xl font-bold mb-2">Selamat Datang
 
+        </h1>
+        <p class="text-lg text-gray-600">Dashboard Monitoring Air Tambak Ikan – Realtime.</p>
+    </div>
     {{-- Menu Login/Register atau Dashboard --}}
     <div class="w-full max-w-md">
         @if (Route::has('login'))
@@ -29,6 +34,8 @@
                         Dashboard
                     </a>
                 @else
+                
+            
                     <a href="{{ route('login') }}"
                         class="w-1/2 text-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
                         Login
@@ -46,15 +53,19 @@
     </div>
 
     <!-- Lottie Animation Script -->
-    <script>
-        var animation = lottie.loadAnimation({
-            container: document.getElementById('lottie-container'),
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: "{{ asset('assets/animations/welcome.json') }}"
+   <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            lottie.loadAnimation({
+                container: document.getElementById('lottie-container'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: "{{ asset('build/assets/animations/welcome.json') }}"
+
+            });
         });
     </script>
+
 
 </body>
 </html>

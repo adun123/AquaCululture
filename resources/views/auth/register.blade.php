@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
@@ -62,7 +64,7 @@
                     @enderror
                 </div>
 
-                <!-- Role -->
+                {{-- <!-- Role -->
                 <div class="mt-4">
                     <label for="role" class="block text-sm font-medium text-gray-700">Role</label>
                     <select id="role" name="role" required
@@ -73,7 +75,7 @@
                     @error('role')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
-                </div>
+                </div> --}}
 
                 <!-- Actions -->
                 <div class="flex items-center justify-between mt-6">
@@ -93,7 +95,7 @@
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: "{{ asset('assets/animations/welcome.json') }}"
+             path: "{{ asset('build/assets/animations/welcome.json') }}"
         });
     </script>
 
