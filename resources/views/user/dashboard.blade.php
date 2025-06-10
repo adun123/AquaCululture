@@ -1,9 +1,9 @@
 <x-app-layout>
-    <x-slot name="header">
+    {{-- <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
             {{ __('Dashboard Monitoring Sensor Air') }}
         </h2>
-    </x-slot>
+    </x-slot> --}}
 
     <div class="py-6">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -132,9 +132,25 @@
                                                     <span class="text-sm text-gray-500 dark:text-gray-400">Belum ada data</span>
                                                 @endif
                                             </td>
-                                            <td class="px-6 py-4 text-sm font-medium whitespace-nowrap">
-                                                <a href="{{ route('devices.show', $device->id) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">Detail</a>
+                                            <td class="px-6 py-4 text-sm font-medium whitespace-nowrap flex space-x-2">
+                                                <a href="{{ route('devices.show', $device->id) }}" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">
+                                                    Detail
+                                                </a>
+
+                                                <a href="{{ route('devices.edit', $device->id) }}" class="text-yellow-600 hover:text-yellow-900 dark:text-yellow-400 dark:hover:text-yellow-300">
+                                                    Edit
+                                                </a>
+
+                                                <form action="{{ route('devices.destroy', $device->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus perangkat ini?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300">
+                                                        Hapus
+                                                    </button>
+                                                </form>
                                             </td>
+
+                                            
                                         </tr>
                                     @endforeach
                                 </tbody>

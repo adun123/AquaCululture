@@ -10,6 +10,7 @@
 <!-- Font Awesome untuk ikon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -36,10 +37,11 @@
             {{ $slot }}
         </main>
     </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Hanya load Alpine.js sekali saja -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
-    @livewireScripts
+   
     <!-- Bootstrap JS + Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
